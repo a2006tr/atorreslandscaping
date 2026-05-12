@@ -1,4 +1,138 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 40px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #222;
+    background: #f8f9fb;
+}
+
+/* Layout wrapper used across sections */
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+/* Fixed top header */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    background: linear-gradient(90deg, #00aaff, #0077cc);
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.logo {
+    text-align: left;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    display: inline-block;
+    padding: 8px 0;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+nav a {
+    color: rgba(255,255,255,0.95);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 150ms ease, color 150ms ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background: rgba(255,255,255,0.12);
+}
+
+/* Keep main content below the fixed header */
+.box-area {
+    padding-top: 100px; /* same as header height */
+}
+
+.banner-area {
+    padding: 60px 0 40px;
+    background: linear-gradient(180deg, #eef8ff, #ffffff);
+}
+
+.banner-area h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #004b6e;
+    text-transform: capitalize;
+}
+
+.content-area {
+    padding: 40px 0;
+}
+
+/* Generic section styles for anchors */
+.section-area {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.section-area:nth-of-type(even) {
+    background: #f5f7fa;
+}
+
+.section-area h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #0b3b4a;
+}
+
+.section-area p {
+    max-width: 820px;
+    margin: 0 auto;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Ensure in-page anchors are visible below the fixed header */
+html {
+    scroll-behavior: smooth;
+}
+
+.section-area {
+    scroll-margin-top: 110px; /* give space for fixed header when linking */
+}
+
+/* Small screens */
+@media (max-width: 700px) {
+    .wrapper {
+        height: 70px;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    nav {
+        gap: 10px;
+        font-size: 14px;
+    }
 }
